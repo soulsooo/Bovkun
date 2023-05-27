@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button id="button1">Check Palindrome</button>
+    <button id="button2">Create New Array</button>
+    
+    <p id="newArr"></p>
+    <p id="userName"></p>
+    <p id="userHi"></p>
+    <p id="reverseName"></p>
+
+    <script>
+        function showMessage() {
+            let message = "Привет, я JavaScript!"; 
+            alert(message);
+        }
+
+        showMessage();
+        
+        function isPalindrome(string) {
+            string = string.toLowerCase().replace(/\W/g, '');
+            const stringArray = [...string];
+            const newArray = [];
+            stringArray.forEach(index => {
+                newArray.unshift(index);
+            });
+            const reversedString = newArray.join('');
+            console.log(string);
+            return string === reversedString;
+        }
+
+        const button1 = document.querySelector('#button1');
+        button1.addEventListener('click', function() {
+            let polindrom = prompt("Введите слово для проверки на палиндром ");
+            alert(isPalindrome(polindrom))
+        });
+        
+        function withoutMinus(n) {
+            const arr = [];
+            for(let i = 0; i < n; i++) {
+                arr[i] = Math.round(Math.random() * (30 - (-10)) + (-10));
+                if (arr[i] < 0) {
+                    arr[i] = arr[i] * arr[i];
+                }
+            }
+            return arr;
+        }
+        
+        const button2 = document.querySelector('#button2');
+        button2.addEventListener('click', function() {
+            const newArray = withoutMinus(15);
+            document.getElementById('newArr').textContent = `Новый массив ${newArray}`;
+        });
+        
+        class User {
+            constructor(name) {
+                this.name = name;
+            }
+            sayName() {
+                const user_name = document.getElementById('userName');
+                user_name.textContent = `Меня зовут ${this.name}`;
+            }
+            
+            sayHi() {
+                const user_hi = document.getElementById('userHi');
+                user_hi.textContent = `Привет, ${this.name}`;
+            }
+        }
+        
+        const user1 = new User("Иван");
+        user1.sayName();
+
+        const user2 = new User("Николай");
+        user2.sayHi();
+        
+        class NameReverser {
+            reverseName(name) {
+                return name.split('').reverse().join('');
+            }
+        }
+
+        const reverse = new NameReverser();
+        const reverseName = reverse.reverseName('Анастасия');
+        document.getElementById('reverseName').textContent = `Перевернутое имя: ${reverseName}`;
+    </script>
+</body>
+</html>

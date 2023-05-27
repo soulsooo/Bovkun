@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+   
+
+   
+    <h1>Информация о покупателе: </h1>
+    <p id="say_info"></p>
+
+    <h1>Информация обо мне: </h1>
+    <p id="info_user_me"></p>
+
+    <h1>Информация о рандомном студенте: </h1>
+    <p id="info_random_student"></p>
+
+
+
+    <script>
+        //1.	Скопируйте код объекта и проанализируйте его работу:
+        let user = {
+            name: "Джон",
+            age: 30
+            };
+        user.sayHi = function() {
+            alert("Привет!");
+            };
+        
+        user.sayHi(); // Привет!
+
+        
+        //2.	 Создайте объект – информация о покупателе (не менее 5 строк) и выведите три из них.
+        let buyer = {
+            name: "Андрей",
+            age: 27,
+            sex: "мужской",
+            discount: "15%",
+            points: 100,
+            };
+
+        buyer.say_info = function() {
+
+            var info = document.getElementById('say_info');
+            info.innerHTML = 
+                "Имя покупателя: " + buyer.name + "<br>" +
+                "Возраст: " + buyer.age + "<br>" +
+                "Пол: " + buyer.sex + "<br>" +
+                "Скидка: " + buyer.discount + "<br>" +
+                "Баллы: " + buyer.points;
+
+            };
+            
+        buyer.say_info();
+        
+        //3.	Создайте объекты пользователи, заказы и рестораны с соответствующими значениями. Организуйте вывод информации из объектов по условию.
+        let order = {
+            dish:"Торт",
+            drink:"Чай",
+            };
+        
+        let restik = {
+            name:"Вкусно",
+            stars:5,
+            };
+        
+            
+
+        //4.	При помощи функции-конструктора и оператора "new" создайте функцию, выводящую имена вашей группы:
+        function User(name, group) {
+            this.name = name;
+            this.group = group;
+            
+            }
+        
+        
+        let user_me = new User("Бовкун А. С.", "ПИ21-1в");
+        user_me.info_user_me = function() {
+            var info_user_me = document.getElementById('info_user_me');
+            info_user_me.innerHTML = "ФИО: "+user_me.name+" Группа: "+user_me.group;}
+        user_me.info_user_me();
+
+
+        function Student(name, group, course) {
+            this.name = name;
+            this.group = group;
+            this.course = course;
+            
+            }
+           
+        
+        //5.	Используя конструктор, создайте объект – студент. Передайте конструктору параметры, определяющие, как создавать объект, и что в него записывать:
+        let student1 = new Student("Соколовский А. С.", "ПИ19-2в", 3);
+        student1.info_random_student = function() {
+            var info_random_student = document.getElementById('info_random_student');
+            info_random_student.innerHTML = "ФИО: "+student1.name+" Группа: "+student1.group+" Курс: "+ student1.course;}
+        student1.info_random_student();
+
+           
+
+    </script>
+</body>
+</html>
