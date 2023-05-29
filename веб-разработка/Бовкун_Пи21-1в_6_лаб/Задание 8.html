@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Фильтр почтовых адресов</title>
+ <meta charset="utf-8">
+ <script>
+  const emails = [
+   'helloworld@gmail.com',
+   'hello.world@yahoo.com',
+   'hi.there@mail.ru',
+   'goodbye.world@yahoo.com',
+   'goodbye@yandex.ru',
+   'hello@gmail.com'
+  ];
+
+  const filterEmails = (domain) => {
+   return emails.filter(email => email.endsWith(domain));
+  }
+ </script>
+</head>
+<body>
+ <label for="domain">Домен:</label>
+ <input type="text" id="domain"><br>
+
+ <button onclick="document.getElementById('result').innerText = filterEmails(document.getElementById('domain').value)">Фильтровать</button>
+
+ <p id="result"></p>
+</body>
+</html>

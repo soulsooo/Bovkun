@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Проверка фамилии на полиндром</title>
+ <meta charset="utf-8">
+ <script>
+  const checkSurname = (surname) => {
+   const reversedSurname = surname.toLowerCase().split('').reverse().join('');
+   if (surname.toLowerCase() === reversedSurname) {
+    return 'Фамилия ' + surname + ' является полиндромом';
+   } else {
+    return 'Фамилия ' + surname + ' не является полиндромом';
+   }
+  }
+ </script>
+</head>
+<body>
+ <label for="surname">Фамилия:</label>
+ <input type="text" id="surname"><br>
+
+ <button onclick="document.getElementById('result').innerText = checkSurname(document.getElementById('surname').value)">Проверить</button>
+
+ <p id="result"></p>
+</body>
+</html>

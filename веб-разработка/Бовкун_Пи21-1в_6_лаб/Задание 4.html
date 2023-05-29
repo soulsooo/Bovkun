@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Вычисление среднего значения в массиве</title>
+ <meta charset="utf-8">
+ <script>
+  const calculateAverage = (arr) => {
+   let sum = 0;
+   for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+   }
+
+   const average = sum / arr.length;
+   return 'Среднее значение в массиве равно: ' + average.toFixed(2);
+  }
+ </script>
+</head>
+<body>
+ <label for="arr">Массив (через запятую):</label>
+ <input type="text" id="arr"><br>
+
+ <button onclick="document.getElementById('result').innerText = calculateAverage(document.getElementById('arr').value.split(',').map(Number))">Вычислить</button>
+
+ <p id="result"></p>
+</body>
+</html>

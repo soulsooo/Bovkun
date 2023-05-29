@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Калькулятор</title>
+ <meta charset="utf-8">
+ <script>
+  const add = (a, b) => a + b;
+  const subtract = (a, b) => a - b;
+  const multiply = (a, b) => a * b;
+  const divide = (a, b) => a / b;
+
+  function calculate() {
+   const num1 = Number(document.getElementById('num1').value);
+   const num2 = Number(document.getElementById('num2').value);
+   const operator = document.getElementById('operator').value;
+
+   let result = 0;
+   switch (operator) {
+    case '+':
+     result = add(num1, num2);
+     break;
+    case '-':
+     result = subtract(num1, num2);
+     break;
+    case '*':
+     result = multiply(num1, num2);
+     break;
+    case '/':
+     result = divide(num1, num2);
+     break;
+    default:
+     alert('Неправильный оператор');
+     break;
+   }
+
+   document.getElementById('result').innerText = result;
+  }
+ </script>
+</head>
+<body>
+ <label for="num1">Число 1:</label>
+ <input type="text" id="num1"><br>
+
+ <label for="operator">Оператор:</label>
+ <select id="operator">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+ </select><br>
+
+ <label for="num2">Число 2:</label>
+ <input type="text" id="num2"><br>
+
+ <button onclick="calculate()">Вычислить</button>
+
+ <p>Результат: <span id="result"></span></p>
+</body>
+</html>
+
