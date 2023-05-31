@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trainfront.ShowTrainsController">
+   <children>
+      <Label layoutX="60.0" layoutY="34.0" prefHeight="73.0" prefWidth="147.0" text="Trains">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <TableView fx:id="trainsTable" layoutX="60.0" layoutY="122.0" prefHeight="614.0" prefWidth="1153.0">
+        <columns>
+          <TableColumn fx:id="trainsNameColumn" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="trainsTypeColumn" prefWidth="75.0" text="Type" />
+            <TableColumn fx:id="trainsSeatsColumn" prefWidth="75.0" text="Seats" />
+            <TableColumn fx:id="trainsCarriageColumn" prefWidth="75.0" text="Carriage" />
+        </columns>
+      </TableView>
+      <Button fx:id="trainsFlights" layoutX="611.0" layoutY="752.0" mnemonicParsing="false" text="Flights" />
+      <Button fx:id="trainsAddFlight" layoutX="512.0" layoutY="752.0" mnemonicParsing="false" text="Add Flying" />
+      <Button fx:id="trainsAddTrain" layoutX="695.0" layoutY="752.0" mnemonicParsing="false" text="Add Train" />
+   </children>
+</AnchorPane>

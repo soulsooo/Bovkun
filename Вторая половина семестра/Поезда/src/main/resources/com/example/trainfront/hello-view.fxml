@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="800.0" prefWidth="1306.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trainfront.ShowFlightsController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Label prefHeight="73.0" prefWidth="305.0" text="Flights">
+      <font>
+         <Font size="50.0" />
+      </font>
+   </Label>
+    <HBox alignment="CENTER_LEFT" layoutX="27.0" layoutY="113.0" prefHeight="34.0" prefWidth="1246.0">
+        <children>
+            <Label text="City From: " />
+            <TextField fx:id="mainCityFrom" />
+            <Label text="City Where: " />
+            <TextField fx:id="mainCityWhere" />
+            <Label text="Train: " />
+            <ComboBox fx:id="todoCategory" />
+        </children>
+    </HBox>
+    <TableView fx:id="mainTable" layoutX="27.0" layoutY="175.0" prefHeight="519.0" prefWidth="1181.0">
+        <columns>
+            <TableColumn fx:id="mainTableFrom" minWidth="75.0" sortable="true" text="City From">
+                <cellValueFactory>
+                    <PropertyValueFactory property="from" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="mainTableWhere" minWidth="50.0" sortable="true" text="City Where">
+                <cellValueFactory>
+                    <PropertyValueFactory property="where" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="mainTableDeparture" minWidth="50.0" sortable="true" text="Departure date">
+                <cellValueFactory>
+                    <PropertyValueFactory property="depDate" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="mainTableDepTime" minWidth="50.0" prefWidth="86.0" sortable="false" text="Departure time">
+                <cellValueFactory>
+                    <PropertyValueFactory property="depTime" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="mainTableArrDate" minWidth="48.0" prefWidth="74.0" sortable="true" text="Arrival date">
+                <cellValueFactory>
+                    <PropertyValueFactory property="arrDate" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="mainTableArrTime" minWidth="50.0" prefWidth="90.0" sortable="false" text="Arrival time">
+                <cellValueFactory>
+                    <PropertyValueFactory property="arrTime" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="mainTableSeats" minWidth="50.0" prefWidth="70.0" sortable="false" text="Seats">
+                <cellValueFactory>
+                    <PropertyValueFactory property="seats" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="mainTableAvailable" minWidth="50.0" prefWidth="111.0" sortable="false" text="Available seats">
+                <cellValueFactory>
+                    <PropertyValueFactory property="available" />
+                </cellValueFactory>
+            </TableColumn>
+         <TableColumn fx:id="mainTableTrainName" prefWidth="75.0" text="Train name" />
+        </columns>
+    </TableView>
+   <HBox alignment="CENTER" prefHeight="47.0" prefWidth="1266.0" spacing="15.0">
+      <children>
+         <Button fx:id="mainAddFlight" mnemonicParsing="false" text="Add Flying" />
+         <Button fx:id="mainTrains" mnemonicParsing="false" text="Trains" />
+         <Button fx:id="mainAddTrain" mnemonicParsing="false" text="Add Train" />
+      </children>
+   </HBox>
+
+</VBox>
